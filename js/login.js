@@ -12,8 +12,8 @@ function validate() {
         var usuario = document.getElementById("inputUser").value; 
         var password = document.getElementById("inputPassword").value; 
         /*Guardando los datos en el sessionStorage*/
-        sessionStorage.setItem("Nombre", usuario);
-        sessionStorage.setItem("Contraseña", password);
+        localStorage.setItem("Nombre", usuario);
+        localStorage.setItem("Contraseña", password);
     
 }
 

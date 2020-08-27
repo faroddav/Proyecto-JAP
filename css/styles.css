@@ -139,3 +139,19 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+#usua {
+  color: white;
+}
+
+.imgUser {
+width:40px;
+height:40px;
+border-radius:20px;
+border:2px solid white;
+}
+
+#search-bar {
+  margin-left: 888px;
+  
+}

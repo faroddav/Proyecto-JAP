@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <title>eMercado - Todo lo que busques está aquí</title>
+    <script src="js/sesion.js"></script>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+ 
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -21,24 +23,94 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+        <div>
+          <img src="img/user-login.png" alt="logo" class="imgUser">
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary" id="usua"></button>
+          
+            <button type="button" class="btn btn-secondary dropdown-toggle"
+                    data-toggle="dropdown">
+              <span class="caret"></span>
+              <span class="sr-only">Desplegar menú</span>
+            </button>
+          
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Acción #1</a></li>
+              <li><a href="#">Acción #2</a></li>
+              <li><a href="#">Acción #3</a></li>
+              <li class="divider"></li>
+              <li><button type="submit" onclick="closeSesion ()" style="background-color: white; border: white;">Cerrar sesion</button> </li>
+            </ul>
+          </div>
+
+        </div>
+        
       </div>
     </nav>
-    
-    <div class="container p-5">
-      <!-- <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-        <h4 class="alert-heading">¡A trabajar! :)</h4>
-        <p>Esta sección corresponde a: Entrega 1 (Fecha de entrega: 16/08/2020) y Entrega 2 (Fecha de entrega: 30/08/2020).</p>
-        <hr>
-        <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-      </div>-->
+  
+    <main role="main" class="pb-5">
       <div class="text-center p-4">
-        <h2> <b>Productos</b></h2>
-        <p class="lead">Verás aquí todos los productos del sitio.</p>
-    </div>
-      <p id="prod-list-container">
+          <h2>Productos</h2>
+          <p class="lead">Verás aquí todos los productos del sitio.</p>
+      
+          <div id="search-bar">
+            <input type="search" placeholder="Buscar.." name="search" id="buscar" onkeyup="searchProd()">
+            <button type="submit"><i class="fa fa-search" onclick="searchProd()"></i></button>
+          </div>
+         
+      </div>
+      
+      <div class="container">
+          <div class="row">
+            
+              <div class="col text-right">
+                  <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+                    <div class="col">
+                      <p class="font-weight-normal text-right my-2">Precio</p>
+                    </div>
+                      <label class="btn btn-light active" id="sortAsc" >
+                          <input type="radio" name="options" autocomplete="off" checked>Asc.
+                      </label>
+                      <label class="btn btn-light" id="sortDesc" >
+                          <input type="radio" name="options" autocomplete="off">Desc.
+                      </label>
+                      <label class="btn btn-light" id="sortBySoldCount" >
+                          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia.
+                      </label>
+                  </div>
+              </div>
+          </div>
+          <div class="row justify-content-end">
+            <div class="col-md-6"></div>
+              <div class="col-md-6 col-sm-12 mb-1 container">
+                <div class="row container p-0 m-0">
+                  <div class="col">
+                    <p class="font-weight-normal text-right my-2">Precio</p>
+                  </div>
+                  <div class="col">
+                    <input class="form-control" type="number" placeholder="min." id="rangeFilterCostMin">
+                  </div>
+                  <div class="col">
+                    <input class="form-control" type="number" placeholder="máx." id="rangeFilterCostMax">
+                  </div>
+                  <div class="col-3 p-0">
+                    <div class="btn-group" role="group">
+                      <button class="btn btn-light btn-block" id="rangeFilterCost">Filtrar</button>
+                      <button class="btn btn-link btn-sm" id="clearRangeFilterCost">Limpiar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="list-group" id="prod-list-container">
+              </div>
+          </div>
+      </div>
+  </main>
 
-      </p>
-    </div>
+
+
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">

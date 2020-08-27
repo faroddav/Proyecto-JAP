@@ -47,3 +47,6 @@ document.addEventListener("DOMContentLoaded", function(e){
 });
 
 
+document.getElementById("usua").innerHTML= localStorage.getItem("Nombre") ;
+
+
