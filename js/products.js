@@ -50,6 +50,7 @@ function showProductsList(){
             ((maxCost == undefined) || (maxCost != undefined && parseInt(products.cost) <= maxCost))){
 
         htmlContentToAppend += `
+        <a href="product-info.html" class="list-group-item list-group-item-action">
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
@@ -89,9 +90,7 @@ function sortAndShowProduct(sortCriteria, productsArray){
 document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCTS_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
-            //productsArray = resultObj.data; // se vuelca en el array productArray los elementos del Json de productos
-            //Muestro los productos ordenados en...
-            //showProductsList(productsArray);
+            
             sortAndShowProduct(ORDER_ASC_BY_COST, resultObj.data);
         }
     });
@@ -141,6 +140,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 });
 
+  // Funcion que permite que mientras escribo en la barra de busqueda vaya filtrando y me vaya mostrando los productos que coinciden con lo que escribo
   function searchProd() {
     var input, filter, y, x, i, txtValue;
     input = document.getElementById("buscar");

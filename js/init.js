@@ -46,7 +46,7 @@ var getJSONData = function(url){
 document.addEventListener("DOMContentLoaded", function(e){
 });
 
-
+// Imprime el nombre de usuario ingresado al iniciar sesion en el boton de la parte superior derecha de la pantalla
 document.getElementById("usua").innerHTML= localStorage.getItem("Nombre") ;
 
 

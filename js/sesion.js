@@ -1,5 +1,5 @@
 
-/*Obtener datos almacenados en el sessionstorage*/
+/*Obtener datos almacenados en el localstorage*/
 var user = localStorage.getItem("Nombre");
 var pass = localStorage.getItem("Contraseña");
 
@@ -13,7 +13,7 @@ function redirect(){
 }
 redirect();
 
-// Funcion para cerrar sesion
+// Funcion para cerrar sesion, vuelve a dejar vacias las variables y redirige a login.html
 function closeSesion () {
   user =localStorage.removeItem("Nombre");
   pass =localStorage.removeItem("Contraseña");
