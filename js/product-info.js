@@ -1,27 +1,36 @@
-var product = {};
 
+// funcion que muetra las imagene del producto
 function showImagesGallery(array){
 
-    let htmlContentToAppend = "";
+    let htmlContentToAppend =""
+    let htmlContent =""
 
     for(let i = 0; i < array.length; i++){
         let imageSrc = array[i];
 
-        htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+        // El siguiente if es para que la posisicion 0 del arreglo quede con clase active tanto en el carruel como en el indicador.
+        if(i==0) {
+            htmlContent += `<li data-target="#carouselExampleIndicators" data-slide-to="` + i +  `" class="active"></li>`
+            htmlContentToAppend+= `
+            <div class="carousel-item active" >
+                <img src="` + imageSrc +  `" class="d-block w-100" alt="...">
             </div>
-        </div>
-        `
-
-        document.getElementById("productImages").innerHTML = htmlContentToAppend;
-    }
+        ` 
+        } else {
+            htmlContent += `<li data-target="#carouselExampleIndicators" data-slide-to="` + i +  `"></li>`
+            htmlContentToAppend += `
+            <div class="carousel-item">
+                <img src="` + imageSrc + `" class="d-block w-100" alt="...">
+            </div>`
+        }  
+    } document.getElementById("productImages").innerHTML = htmlContentToAppend;  // Aqui se inserta el carrusel
+    document.getElementById("caruselIndicators").innerHTML = htmlContent  // Aqui se insertan los indicadores de abajo del carrusel
+    
 }
 
 
 
-   
+ // Funcion que muestra lo comentarios  
 function showComents(array){
     
     let htmlContentToAppend = "";
@@ -30,6 +39,7 @@ function showComents(array){
     for(let i = 0; i < array.length; i++){
         let coments = array[i];
         
+        // Estas son las estrellas para despues mostrarlas en los comentarios
         A =  `<span class="fa fa-star checked"></span>`; 
         a = A.repeat(coments.score);
         B = `<span class="fa fa-star"></span>`; 
@@ -61,7 +71,7 @@ function showProductRelated(array){
             product = resultObj.data;
 
            let htmlContentToAppend = "";
-
+    // Cada elemento del array lo pasa como posicion de product(JSON con la informacion de lo productos)
     for(let i = 0; i < array.length; i++){
         let relatedPosition = array[i];
         let related = product[relatedPosition];
@@ -78,9 +88,9 @@ function showProductRelated(array){
         
         `
 
-        document.getElementById("productRelated").innerHTML = htmlContentToAppend;
+        
     
-}
+} document.getElementById("productRelated").innerHTML = htmlContentToAppend;
 }
 })}
 
@@ -145,12 +155,14 @@ function showNewComents(){
     y = n.getFullYear();
      //Mes
     m = n.getMonth() + 1;
+    if (m<10) {m= "0" + m};
      //Día
     d = n.getDate();
     //horas
     h = n.getHours();
     //minutos
     min = n.getMinutes();
+     if (min<10) {min= "0" + min };
     //segundos
     s = n.getSeconds();
 

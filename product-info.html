@@ -23,7 +23,6 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
       <div>
         <img src="img/user-login.png" alt="logo" class="imgUser">
         <div class="btn-group">
@@ -36,11 +35,10 @@
           </button>
         
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Acción #1</a></li>
-            <li><a href="#">Acción #2</a></li>
-            <li><a href="#">Acción #3</a></li>
-            <li class="divider"></li>
-            <li><button type="submit" onclick="closeSesion ()" style="background-color: white; border: white;">Cerrar sesion</button> </li>
+            <li><button type="submit" onclick="location.href = 'my-profile.html';"  style="background-color: white; border: white;">Mi perfil</button></li>
+            <li><button type="submit" onclick="location.href = 'cart.html';"  style="background-color: white; border: white;">Mi carrito</button></li>
+            <li class="divider"> <hr> </li>
+            <li><button type="submit" onclick="closeSesion ()" style="background-color: white; border: white;"><b>Cerrar sesion</b></button> </li>
           </ul>
         </div>
     </div>
@@ -80,7 +78,21 @@
 
         <dt>Imágenes ilustrativas</dt>
         <dd>
-          <div class="row text-center text-lg-left pt-2" id="productImages">
+          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="width: 550px;">
+            <ol class="carousel-indicators" id="caruselIndicators">
+          
+            </ol>
+            <div class="carousel-inner" id="productImages" >
+              
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </dd>
 
