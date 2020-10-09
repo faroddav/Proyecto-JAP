@@ -64,14 +64,151 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container">
+    <div class="text-center p-4">
+      <h2>Carrito</h2>
+      <p class="lead">Verás aquí todos lo productos agregados al carrito.</p>
     </div>
+
+    <!--Aqui comienza el carrito-->
+<section>
+
+ 
+  <div class="row">
+
+    
+    <div class="col-lg-8">
+
+      
+      <div class="mb-3">
+        <div class="pt-4 wish-list" >
+
+          <h5 class="mb-4">Carrito (<span>2</span> items)</h5>
+
+          <div class="row mb-4"id="cartProduct"> <!-- Aquí pego lo producto del carrito -->
+            
+          </div>
+          <hr class="mb-4">
+          
+          <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> No retrase la compra, añadir artículos a su carrito no significa reservarlos.</p>
+
+        </div>
+      </div>
+      
+
+      
+      <div class="mb-3">
+        <div class="pt-4">
+
+          <h5 class="mb-4">La fecha estimada de entrega es:</h5>
+
+          <p class="mb-0" id="entrega"> </p>
+        </div>
+      </div>
+     
+      <div class="mb-3">
+        <div class="pt-4">
+
+          <h5 class="mb-4">Aceptamos</h5>
+
+          <img class="mr-2" width="45px"
+            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+            alt="Visa">
+          <img class="mr-2" width="45px"
+            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+            alt="American Express">
+          <img class="mr-2" width="45px"
+            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+            alt="Mastercard">
+          <img class="mr-2" width="45px"
+            src="https://mdbootstrap.com/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
+            alt="PayPal acceptance mark">
+        </div>
+      </div>
+   
+
+    </div>
+   
+
+ 
+    <div class="col-lg-4">
+
+      
+      <div class="mb-3">
+        <div class="pt-4">
+          <h5 class="mb-3">Tipo de envío</h5><!-- Inicia tipo de envio -->
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+              <label class="custom-control-label" for="premiumradio">Premium de 2 a 5 dias (15%)</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="expressradio">Express de 5 a 8 dias (7%)</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+              <label class="custom-control-label" for="standardradio">Estándar de 12 a 15 dias (5%)</label>
+            </div>
+            <div class="row">
+              <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver condiciones</button>
+            </div>
+          </div><!-- termina tipo de envio -->
+          <h5 class="mb-3">Dirección</h5><!-- Inicia dirección -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="productName">Calle</label>
+              <input type="text" class="form-control" id="productName" placeholder="" value="" >
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="productName">Numero</label>
+              <input type="text" class="form-control" id="productName" placeholder="" value="" >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="productName">Esquina</label>
+              <input type="text" class="form-control" id="productName" placeholder="" value="" >
+            </div>
+            
+          </div><!-- Termina dirección -->
+
+          <h5 class="mb-3">Importe total de la compra</h5>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+              Subtotal
+              <span id="subtotalCost">-</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+              Envío
+              <span id="shippingCost">-</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+              <div>
+                <strong>Total</strong>
+                <strong>
+                  <p class="mb-0">(IVA incluido)</p>
+                </strong>
+              </div>
+              <span ><strong id="totalCost">-</strong></span>
+            </li>
+          </ul>
+
+          <button type="button" class="btn btn-primary btn-block">Comprar</button>
+
+        </div>
+      </div>
+    
+
+    </div>
+ 
+
   </div>
+ 
+
+</section>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
