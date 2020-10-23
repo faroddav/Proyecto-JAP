@@ -28,7 +28,6 @@
         font-size: 3.5rem;
       }
     }
-  
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -46,18 +45,22 @@
         <img src="img/user-login.png" alt="logo" class="imgUser">
         <div class="btn-group">
           <button type="button" class="btn btn-secondary" id="usua"></button>
-        
-          <button type="button" class="btn btn-secondary dropdown-toggle"
-                  data-toggle="dropdown">
+
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
             <span class="caret"></span>
             <span class="sr-only">Desplegar menú</span>
           </button>
-        
+
           <ul class="dropdown-menu" role="menu">
-            <li><button type="submit" onclick="location.href = 'my-profile.html';"  style="background-color: white; border: white;">Mi perfil</button></li>
-            <li><button type="submit" onclick="location.href = 'cart.html';"  style="background-color: white; border: white;">Mi carrito</button></li>
-            <li class="divider"> <hr> </li>
-            <li><button type="submit" onclick="closeSesion ()" style="background-color: white; border: white;"><b>Cerrar sesion</b></button> </li>
+            <li><button type="submit" onclick="location.href = 'my-profile.html';"
+                style="background-color: white; border: white;">Mi perfil</button></li>
+            <li><button type="submit" onclick="location.href = 'cart.html';"
+                style="background-color: white; border: white;">Mi carrito</button></li>
+            <li class="divider">
+              <hr>
+            </li>
+            <li><button type="submit" onclick="closeSesion ()" style="background-color: white; border: white;"><b>Cerrar
+                  sesion</b></button> </li>
           </ul>
         </div>
 
@@ -71,157 +74,262 @@
     </div>
 
     <!--Aqui comienza el carrito-->
-<section>
+    <section>
 
- 
-  <div class="row">
 
-    
-    <div class="col-lg-8">
+      <div class="row">
 
-      
-      <div class="mb-3">
-        <div class="pt-4 wish-list" >
 
-          <h5 class="mb-4">Carrito (<span>2</span> items)</h5>
 
-          <div class="row mb-4"id="cartProduct"> <!-- Aquí pego lo producto del carrito -->
-            
-          </div>
-          <hr class="mb-4">
-          
-          <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> No retrase la compra, añadir artículos a su carrito no significa reservarlos.</p>
+        <div class="col-lg-8">
 
-        </div>
-      </div>
-      
 
-      
-      <div class="mb-3">
-        <div class="pt-4">
+          <div class="mb-3">
+            <div class="pt-4 wish-list">
 
-          <h5 class="mb-4">La fecha estimada de entrega es:</h5>
+              <h5 class="mb-4">Carrito (<span>2</span> items)</h5>
 
-          <p class="mb-0" id="entrega"> </p>
-        </div>
-      </div>
-     
-      <div class="mb-3">
-        <div class="pt-4">
+              <div  id="cartProduct">
+                <!-- Aquí pego los productos del carrito -->
 
-          <h5 class="mb-4">Aceptamos</h5>
-
-          <img class="mr-2" width="45px"
-            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-            alt="Visa">
-          <img class="mr-2" width="45px"
-            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-            alt="American Express">
-          <img class="mr-2" width="45px"
-            src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-            alt="Mastercard">
-          <img class="mr-2" width="45px"
-            src="https://mdbootstrap.com/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
-            alt="PayPal acceptance mark">
-        </div>
-      </div>
-   
-
-    </div>
-   
-
- 
-    <div class="col-lg-4">
-
-      
-      <div class="mb-3">
-        <div class="pt-4">
-          <h5 class="mb-3">Tipo de envío</h5><!-- Inicia tipo de envio -->
-          <div class="d-block my-3">
-            <div class="custom-control custom-radio">
-              <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
-              <label class="custom-control-label" for="premiumradio">Premium de 2 a 5 dias (15%)</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
-              <label class="custom-control-label" for="expressradio">Express de 5 a 8 dias (7%)</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-              <label class="custom-control-label" for="standardradio">Estándar de 12 a 15 dias (5%)</label>
-            </div>
-            <div class="row">
-              <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver condiciones</button>
-            </div>
-          </div><!-- termina tipo de envio -->
-          <h5 class="mb-3">Dirección</h5><!-- Inicia dirección -->
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="productName">Calle</label>
-              <input type="text" class="form-control" id="productName" placeholder="" value="" >
-            </div>
-            <div class="col-md-6 mb-3">
-              <label for="productName">Numero</label>
-              <input type="text" class="form-control" id="productName" placeholder="" value="" >
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 mb-3">
-              <label for="productName">Esquina</label>
-              <input type="text" class="form-control" id="productName" placeholder="" value="" >
-            </div>
-            
-          </div><!-- Termina dirección -->
-
-          <h5 class="mb-3">Importe total de la compra</h5>
-
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-              Subtotal
-              <span id="subtotalCost">-</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center px-0">
-              Envío
-              <span id="shippingCost">-</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-              <div>
-                <strong>Total</strong>
-                <strong>
-                  <p class="mb-0">(IVA incluido)</p>
-                </strong>
               </div>
-              <span ><strong id="totalCost">-</strong></span>
-            </li>
-          </ul>
+              <hr class="mb-4">
 
-          <button type="button" class="btn btn-primary btn-block">Comprar</button>
+              <p class="text-primary mb-0"><i class="fas fa-info-circle mr-1"></i> No retrase la compra, añadir
+                artículos a su carrito no significa reservarlos.</p>
+
+            </div>
+          </div>
+
+
+
+          <div class="mb-3">
+            <div class="pt-4">
+
+              <h5 class="mb-4">La fecha estimada de entrega es:</h5>
+
+              <p class="mb-0" id="entrega"> </p>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="pt-4">
+
+              <h5 class="mb-4">Aceptamos</h5>
+
+              <img class="mr-2" width="45px"
+                src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
+                alt="Visa">
+              <img class="mr-2" width="45px"
+                src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
+                alt="American Express">
+              <img class="mr-2" width="45px"
+                src="https://mdbootstrap.com/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
+                alt="Mastercard">
+              <img class="mr-2" width="45px"
+                src="https://mdbootstrap.com/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.png"
+                alt="PayPal acceptance mark">
+            </div>
+          </div>
+
 
         </div>
+
+
+
+        <div class="col-lg-4">
+
+
+          <div class="mb-3">
+
+            <div class="pt-4">
+
+              <h5 class="mb-3">Tipo de envío</h5><!-- Inicia tipo de envio -->
+              <div class="d-block my-3">
+                <div class="custom-control custom-radio">
+                  <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" checked=""
+                    required="">
+                  <label class="custom-control-label" for="premiumradio">Premium de 2 a 5 dias (15%)</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="expressradio" name="publicationType" type="radio" class="custom-control-input" required="">
+                  <label class="custom-control-label" for="expressradio">Express de 5 a 8 dias (7%)</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input id="standardradio" name="publicationType" type="radio" class="custom-control-input"
+                    required="">
+                  <label class="custom-control-label" for="standardradio">Estándar de 12 a 15 dias (5%)</label>
+                </div>
+                <div class="row">
+                  <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver
+                    condiciones</button>
+                </div>
+              </div><!-- termina tipo de envio -->
+
+              <h5 class="mb-3">Dirección</h5><!-- Inicia dirección -->
+              <div>
+                <form class="" id="shipping-info">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="streetAddress">Calle</label>
+                      <input type="text" class="form-control" id="streetAddress" placeholder="" value="" >
+                      <div class="invalid-feedback">
+                        Ingresa una calle
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="numberAddress">Numero</label>
+                      <input type="text" class="form-control" id="numberAddress" placeholder="" value="" >
+                      <div class="invalid-feedback">
+                        Ingresa un numero de dirección
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="esquina">Esquina</label>
+                      <input type="text" class="form-control" placeholder="" value="">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="countryAddress">Pais</label>
+                      <input type="text" class="form-control" id="countryAddress" placeholder="" value="">
+                      <div class="invalid-feedback">
+                        Ingresa un pais
+                      </div>
+                    </div>
+
+                  </div><!-- Termina dirección -->
+
+                  <div class="mb-3">
+
+                    <!-- Button Forma de pago -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                      Forma de pago
+                    </button>
+                    <div class="invalid-feedback">
+                      Ingresa un pais
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">FORMA DE PAGO</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <div>
+                              <input type="radio" id="Transferencia" name="drone" value="Transferencia"checked="" onclick="checkPay()">
+                              <label for="Transferencia">Transferencia bancaria</label>
+                            </div>
+                            <div class="form-group">
+                              <label for="countNumber">NUMERO DE CUENTA BANCARIA</label>
+                              <div class="input-group">
+                                <input type="text" class="form-control" id="countNumber" placeholder="Número de cuenta bancaria"/>
+                              </div>
+                            </div>
+                            <hr style="width:100%;">
+                            <div>
+                              <input type="radio" id="cardcredit" name="drone" value="card credit" checked="" onclick="checkPay()">
+                              <label for="card credit">Tarjeta de credito</label>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="cardNumber">NUMERO DE TARJETA</label>
+                              <div class="input-group">
+                                <input type="text" class="form-control" id="cardNumber"placeholder="Número de tarjeta valido"  autofocus />
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-xs-7 col-md-7">
+                                <div class="form-group">
+                                  <label for="expityMonth"> FECHA DE EXPIRACIÓN</label>
+                                  <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityMonth" placeholder="MM" />
+                                  </div>
+                                  <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" class="form-control" id="expityYear" placeholder="YY" />
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="form-group">
+                                  <label for="cvCode"> CODIGO CV </label>
+                                  <input type="password" class="form-control" id="cvCode" placeholder="CV" />
+                                </div>
+                              </div>
+                            </div> <!-- Termina nodal -->
+
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" >Guardar cambios</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div><!-- Termina Forma de pago -->
+
+                  <div>
+                    <h5 class="mb-3">Importe total de la compra</h5>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                        Subtotal
+                        <span id="subtotalCost">-</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                        Envío
+                        <span id="shippingCost">-</span>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                        <div>
+                          <strong>Total</strong>
+                          <strong>
+                            <p class="mb-0">(IVA incluido)</p>
+                          </strong>
+                        </div>
+                        <span ><strong id="totalCost">-</strong></span>
+                      </li>
+                    </ul>
+
+                    <button class="btn btn-primary btn-block" type="submit" value ="submit">Comprar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    
 
+
+    </section>
+    <div class="alert fade" role="alert" id="alertResult">
+      <span id="resultSpan"></span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
- 
 
-  </div>
- 
 
-</section>
-
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+    <div id="spinner-wrapper">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-  </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/dropzone.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/cart.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>
