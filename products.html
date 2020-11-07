@@ -1,127 +1,149 @@
 <!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <title>eMercado - Todo lo que busques está aquí</title>
-    <script src="js/sesion.js"></script>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
- 
-  </head>
-  <body>
-    <nav class="site-header sticky-top py-1 bg-dark">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-        <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-        <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-        <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <div> 
-          <img src="img/user-login.png" alt="logo" class="imgUser">
-          <div class="btn-group">
-            <button type="button" class="btn btn-secondary" id="usua"></button><!-- boton en el cual se imprime el nombre de usuario -->
-          
-            <button type="button" class="btn btn-secondary dropdown-toggle"
-                    data-toggle="dropdown">
-              <span class="caret"></span>
-              <span class="sr-only">Desplegar menú</span>
-            </button> <!-- boton el cual despliega distintas funciones entre ellas cerrar sesion -->
-          
-            <ul class="dropdown-menu" role="menu">
-              <li><button type="submit" onclick="location.href = 'my-profile.html';"  style="background-color: white; border: white;">Mi perfil</button></li>
-              <li><button type="submit" onclick="location.href = 'cart.html';"  style="background-color: white; border: white;">Mi carrito</button></li>
-              <li class="divider"> <hr> </li>
-              <li><button type="submit" onclick="closeSesion ()" style="background-color: white; border: white;"><b>Cerrar sesion</b></button> </li>
-            </ul>
-          </div>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <script src="js/sesion.js"></script>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <div>
+        <img src="img/user-login.png" alt="logo" class="imgUser">
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary" id="usua"></button>
+          <!-- boton en el cual se imprime el nombre de usuario -->
+
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only">Desplegar menú</span>
+          </button> <!-- boton el cual despliega distintas funciones entre ellas cerrar sesion -->
+
+          <ul class="dropdown-menu" role="menu">
+            <li><button type="submit" onclick="location.href = 'my-profile.html';"
+                style="background-color: white; border: white;">Mi perfil</button></li>
+            <li><button type="submit" onclick="location.href = 'cart.html';"
+                style="background-color: white; border: white;">Mi carrito</button></li>
+            <li class="divider">
+              <hr>
+            </li>
+            <li><button type="submit" onclick="closeSesion ()" style="background-color: white; border: white;"><b>Cerrar
+                  sesion</b></button> </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </nav>
+
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Productos</h2>
+      <p class="lead">Verás aquí todos los productos del sitio.</p>
+
+      <div class="container" id="search-bar">
+        <div class="row justify-content-end" >
+          <input type="search" placeholder="Buscar.." name="search" id="buscar" onkeyup="searchProd()">
+        <!-- barra para buscar los productos -->
+        <button type="submit"><i class="fa fa-search" onclick="searchProd()"></i></button>
 
         </div>
         
       </div>
-    </nav>
-  
-    <main role="main" class="pb-5">
-      <div class="text-center p-4">
-          <h2>Productos</h2>
-          <p class="lead">Verás aquí todos los productos del sitio.</p>
-      
-          <div id="search-bar">
-            <input type="search" placeholder="Buscar.." name="search" id="buscar" onkeyup="searchProd()"> <!-- barra para buscar los productos -->
-            <button type="submit"><i class="fa fa-search" onclick="searchProd()"></i></button>
+
+    </div>
+
+    <div class="row justify-content-end container-fluid">
+      <div class="row justify-content-between"  >
+        <div class="col text-right">
+          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons"  id="filtros1">
+            <div class="col">
+              <p class="font-weight-normal text-right my-2">Precio</p>
+            </div>
+            <label class="btn btn-light active" id="sortAsc">
+              <input type="radio" name="options" autocomplete="off" checked>Asc.
+            </label>
+            <label class="btn btn-light" id="sortDesc">
+              <input type="radio" name="options" autocomplete="off">Desc.
+            </label>
+            <label class="btn btn-light" id="sortBySoldCount">
+              <input type="radio" name="options" autocomplete="off"><i
+                class="fas fa-sort-amount-down mr-1"></i>Relevancia.
+            </label>
           </div>
-         
+        </div>
       </div>
-      
-      <div class="container">
-          <div class="row">
-            
-              <div class="col text-right">
-                  <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                    <div class="col">
-                      <p class="font-weight-normal text-right my-2">Precio</p>
-                    </div>
-                      <label class="btn btn-light active" id="sortAsc" >
-                          <input type="radio" name="options" autocomplete="off" checked>Asc.
-                      </label>
-                      <label class="btn btn-light" id="sortDesc" >
-                          <input type="radio" name="options" autocomplete="off">Desc.
-                      </label>
-                      <label class="btn btn-light" id="sortBySoldCount" >
-                          <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia.
-                      </label>
-                  </div>
+      <div class="row justify-content-between container-fluid">
+        <div class="col-md-6 col-xs-1"></div>
+        <div class="col-md-6 col-sm-12 mb-1 container-fluid">
+          <div class="row container p-0 m-0" id="filtros2">
+            <div class="col">
+              <p class="font-weight-normal text-right my-2">Precio</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCostMin">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCostMax">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="rangeFilterCost">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="clearRangeFilterCost">Limpiar</button>
               </div>
+            </div>
           </div>
-          <div class="row justify-content-end">
-            <div class="col-md-6"></div>
-              <div class="col-md-6 col-sm-12 mb-1 container">
-                <div class="row container p-0 m-0">
-                  <div class="col">
-                    <p class="font-weight-normal text-right my-2">Precio</p>
-                  </div>
-                  <div class="col">
-                    <input class="form-control" type="number" placeholder="min." id="rangeFilterCostMin">
-                  </div>
-                  <div class="col">
-                    <input class="form-control" type="number" placeholder="máx." id="rangeFilterCostMax">
-                  </div>
-                  <div class="col-3 p-0">
-                    <div class="btn-group" role="group">
-                      <button class="btn btn-light btn-block" id="rangeFilterCost">Filtrar</button>
-                      <button class="btn btn-link btn-sm" id="clearRangeFilterCost">Limpiar</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <div class="row">
-              <div class="list-group" id="prod-list-container">
-              </div>
-          </div>
+        </div>
       </div>
+      <div class="album py-5 bg-light">
+        <div class="container-fluid">
+          <div class="row" id="prod-list-container"></div>
+        </div>
+
+      </div>
+    </div>
   </main>
 
 
 
-    <footer class="text-muted bg-light">
-      <div class="container">
-        <p class="float-right">
-          <a href="#">Volver arriba</a>
-        </p>
-        <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-        <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-      </div>
-    </footer>
-    <div id="spinner-wrapper"><div class="lds-ring"><div></div><div></div><div></div><div></div></div></div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/products.js"></script>
-  </body>
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
+</body>
+
 </html>

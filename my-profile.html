@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="site-header sticky-top py-1 bg-dark menu-main">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
@@ -45,31 +45,90 @@
         <img src="img/user-login.png" alt="logo" class="imgUser">
         <div class="btn-group">
           <button type="button" class="btn btn-secondary" id="usua"></button>
-        
-          <button type="button" class="btn btn-secondary dropdown-toggle"
-                  data-toggle="dropdown">
+
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
             <span class="caret"></span>
             <span class="sr-only">Desplegar menú</span>
           </button>
-        
+
           <ul class="dropdown-menu" role="menu">
-            <li><button type="submit" onclick="location.href = 'my-profile.html';"  style="background-color: white; border: white;">Mi perfil</button></li>
-            <li><button type="submit" onclick="location.href = 'cart.html';"  style="background-color: white; border: white;">Mi carrito</button></li>
-            <li class="divider"> <hr> </li>
-            <li><button type="submit" onclick="closeSesion ()" style="background-color: white; border: white;"><b>Cerrar sesion</b></button> </li>
+            <li><button type="submit" onclick="location.href = 'my-profile.html';"
+                style="background-color: white; border: white;">Mi perfil</button></li>
+            <li><button type="submit" onclick="location.href = 'cart.html';"
+                style="background-color: white; border: white;">Mi carrito</button></li>
+            <li class="divider">
+              <hr>
+            </li>
+            <li><button type="submit" onclick="closeSesion ()" style="background-color: white; border: white;"><b>Cerrar
+                  sesion</b></button> </li>
           </ul>
         </div>
-    </div>
+      </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <div class="container"></div>
+  <div class="text-center p-4">
+    <h2>Mi perfil</h2>
+    <p class="lead">Ingresa los datos relacionados a tu perfil.</p>
   </div>
+  <div class="container" >
+    
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="text-center">
+          <img src="" id="imgProfile" class="avatar img-circle img-thumbnail" alt="profile" width="220">
+          <h6>Foto de perfil</h6>
+        </div>
+      </div>
+      <!-- edit form column -->
+      <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+        
+        <h3>Informacion personal</h3>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Nombres:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="" type="text" id="names">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Apellidos:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="" type="text" id="apellidos">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Edad:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="" type="text" id="edad">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="" type="text" id="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Telefono:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="" type="text" id="telefono">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input class="btn btn-primary" value="Guardar" type="button" onclick="saveDate()">
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+
+
+
   <footer class="text-muted bg-light">
+  <div id="cartel"></div>
     <div class="container">
       <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>

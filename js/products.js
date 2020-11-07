@@ -49,19 +49,19 @@ function showProductsList(){
         if (((minCost == undefined) || (minCost != undefined && parseInt(products.cost) >= minCost)) &&
             ((maxCost == undefined) || (maxCost != undefined && parseInt(products.cost) <= maxCost))){
 
-        htmlContentToAppend += `
-        <a href="product-info.html" class="list-group-item list-group-item-action">
-        <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + products.imgSrc + `" alt="` + products.description + `" class="img-thumbnail">
+        htmlContentToAppend += `  
+        <div class="col-md-4 ">
+        <a href="product-info.html" class="shadow-sm custom-card">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <img src="` + products.imgSrc + `" alt="` + products.description + `" class="bd-placeholder-img card-img-top"  >
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ products.name +`</h4>
+                        <h4 class="mb-1 card-text">`+ products.name +`</h4>
                         <h5>  `+ products.currency  + " " + products.cost + `</h5>    
                     </div>
-                    <div> <p>  ` + products.description + ` </p> </div>
+                    <div> <p class="card-text">  ` + products.description + ` </p> </div>
                     <small class="text-muted">` + products.soldCount + ` vendidos</small>
                 </div>
             </div>
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
  
     
     for (i = 0; i < y.length; i++) {
-      x = y[i].getElementsByClassName("row")[0];
+      x = y[i].getElementsByClassName("card mb-4 shadow-sm")[0];
       if (x) {
         txtValue = x.textContent ;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {

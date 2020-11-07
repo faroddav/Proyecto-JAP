@@ -151,13 +151,24 @@ border-radius:20px;
 border:2px solid white;
 }
 
-#search-bar {
-  margin-left: 888px;
-  
-}
 
 #comentBotton {
   position: relative;
   left: 455px;
   
 }
+
+
+@media (max-width: 320px) {
+  #filtros1 {
+   display: block;
+  }
+}
+
+@media (max-width: 410px) {
+  #filtros2 {
+   display: block;
+  }
+}
+
+
